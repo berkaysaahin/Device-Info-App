@@ -7,12 +7,87 @@
     tools:context=".MainActivity">
 
     <TextView
+        android:id="@+id/twAvailMem"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
+        android:text="available memory"
+        app:layout_constraintBottom_toTopOf="@+id/twUsedMem"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/twTotalMem"
+        app:layout_constraintVertical_bias="0.5" />
+
+    <TextView
+        android:id="@+id/twDevMod"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="device model"
+        app:layout_constraintBottom_toTopOf="@+id/twHw"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/twManu"
+        app:layout_constraintVertical_bias="0.5" />
+
+    <TextView
+        android:id="@+id/twManu"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="manufacturer"
+        app:layout_constraintBottom_toTopOf="@+id/twDevMod"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.5" />
+
+    <TextView
+        android:id="@+id/twProd"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="product"
+        app:layout_constraintBottom_toTopOf="@+id/twTotalMem"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/twHw"
+        app:layout_constraintVertical_bias="0.5" />
+
+    <TextView
+        android:id="@+id/twTotalMem"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="total memory"
+        app:layout_constraintBottom_toTopOf="@+id/twAvailMem"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/twProd"
+        app:layout_constraintVertical_bias="0.5" />
+
+    <TextView
+        android:id="@+id/twHw"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="hardware"
+        app:layout_constraintBottom_toTopOf="@+id/twProd"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/twDevMod"
+        app:layout_constraintVertical_bias="0.5" />
+
+    <TextView
+        android:id="@+id/twUsedMem"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="used memory"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/twAvailMem"
+        app:layout_constraintVertical_bias="0.5" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
