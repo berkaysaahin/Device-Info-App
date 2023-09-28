@@ -119,11 +119,47 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="used storage"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/twBatLevel"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/twAvailSto"
+        app:layout_constraintVertical_bias="0.5" />
+
+    <TextView
+        android:id="@+id/twBatLevel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="battery level"
+        app:layout_constraintBottom_toTopOf="@+id/twBatHealth"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/twUsedSto"
+        app:layout_constraintVertical_bias="0.5" />
+
+    <TextView
+        android:id="@+id/twBatHealth"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="battery health"
+        app:layout_constraintBottom_toTopOf="@+id/twBatTemp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/twBatLevel"
+        app:layout_constraintVertical_bias="0.5" />
+
+    <TextView
+        android:id="@+id/twBatTemp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="battery temperature"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/twBatHealth"
         app:layout_constraintVertical_bias="0.5" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

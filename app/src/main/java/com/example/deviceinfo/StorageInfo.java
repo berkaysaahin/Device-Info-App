@@ -1,9 +1,5 @@
 package com.example.deviceinfo;
-
-import static androidx.core.content.ContextCompat.getSystemService;
-
 import android.app.usage.StorageStatsManager;
-import android.content.Context;
 import android.os.Build;
 import android.os.storage.StorageManager;
 import android.os.storage.StorageVolume;
@@ -57,8 +53,8 @@ public class StorageInfo {
             }
 
             totalSto.setText("Total Storage: " + stringTotal + " gb");
-            availSto.setText("Total Storage: " + stringAvail + " gb");
-            usedSto.setText("Total Storage: " + stringUsed + " gb");
+            availSto.setText("Available Storage: " + stringAvail + " gb");
+            usedSto.setText("Used Storage: " + stringUsed + " gb");
 
         }
     }

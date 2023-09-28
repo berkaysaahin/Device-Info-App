@@ -8,6 +8,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.app.ActivityManager;
 import android.app.usage.StorageStatsManager;
 import android.content.Context;
+import android.content.Intent;
+import android.content.IntentFilter;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
@@ -16,8 +18,9 @@ import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
 
-    TextView manu, devMod, hw, prod, availMemr,usedMemr,totalMemr,availSto,usedSto,totalSto;
+    TextView manu, devMod, hw, prod, availMemr,usedMemr,totalMemr,availSto,usedSto,totalSto,batLevel,batHealth,batTemp;
     public ActivityManager activityManager;
+    BatteryInfo batteryInfo;
 
 
 
@@ -40,6 +43,10 @@ public class MainActivity extends AppCompatActivity {
         usedSto = findViewById(R.id.twUsedSto);
         totalSto = findViewById(R.id.twTotalSto);
 
+        batLevel = findViewById(R.id.twBatLevel);
+        batHealth = findViewById(R.id.twBatHealth);
+        batTemp = findViewById(R.id.twBatTemp);
+
         SystemInfo.setSystemInfo(manu,devMod,hw,prod);
 
         activityManager = (ActivityManager) getSystemService(ACTIVITY_SERVICE);
@@ -61,6 +68,13 @@ public class MainActivity extends AppCompatActivity {
 
         StorageInfo storageInfo = new StorageInfo(storageManager,storageStatsManager);
         storageInfo.updateStorageInfo(availSto,usedSto,totalSto);
+
+        batteryInfo = new BatteryInfo(batLevel,batTemp,batHealth);
+
+        IntentFilter intentFilter = new IntentFilter();
+        intentFilter.addAction(Intent.ACTION_BATTERY_CHANGED);
+        registerReceiver(batteryInfo, intentFilter);
+
 
 
     }
