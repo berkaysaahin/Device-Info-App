@@ -23,7 +23,7 @@ public class MemoryInfo {
         activityManager.getMemoryInfo(memory);
         totalMemory = memory.totalMem / 1048576L;
         String strTotal = Long.toString(totalMemory);
-        totalMemr.setText("Total Memory: " + strTotal);
+        totalMemr.setText("Usable Total Memory: " + strTotal + " mb");
     }
 
     public void updateAvailableMemory(TextView availMemr, TextView usedMemr){
@@ -33,10 +33,10 @@ public class MemoryInfo {
         long availableMemory = memory.availMem / 1048576L;
         String strAvail = Long.toString(availableMemory);
 
-        availMemr.setText("Available Memory: " + strAvail);
+        availMemr.setText("Available Memory: " + strAvail + " mb");
         long usedMemory = totalMemory - availableMemory;
         String strUsed = Long.toString(usedMemory);
 
-        usedMemr.setText("Memory in Use: " + strUsed);
+        usedMemr.setText("Memory in Use: " + strUsed + " mb");
     }
 }

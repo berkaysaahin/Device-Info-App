@@ -83,11 +83,47 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="used memory"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/twTotalSto"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/twAvailMem"
+        app:layout_constraintVertical_bias="0.5" />
+
+    <TextView
+        android:id="@+id/twTotalSto"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="total storage"
+        app:layout_constraintBottom_toTopOf="@+id/twAvailSto"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/twUsedMem"
+        app:layout_constraintVertical_bias="0.5" />
+
+    <TextView
+        android:id="@+id/twAvailSto"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="available storage"
+        app:layout_constraintBottom_toTopOf="@+id/twUsedSto"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/twTotalSto"
+        app:layout_constraintVertical_bias="0.5" />
+
+    <TextView
+        android:id="@+id/twUsedSto"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="used storage"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/twAvailSto"
         app:layout_constraintVertical_bias="0.5" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
