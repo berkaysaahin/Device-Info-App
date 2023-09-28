@@ -5,23 +5,25 @@ import android.widget.TextView;
 
 public class MemoryInfo {
 
+
     public ActivityManager activityManager;
     public ActivityManager.MemoryInfo memory;
 
     public long totalMemory;
 
-    public MemoryInfo(ActivityManager activityManager){
+    public MemoryInfo(ActivityManager activityManager, TextView totalMemr){
         this.activityManager = activityManager;
         this.memory = new ActivityManager.MemoryInfo();
-        this.
+        this.calculateTotalMemory(totalMemr);
     }
 
-    public long calculateTotalMemory(TextView totalMemr){
+    //dependency injection
+
+    public void calculateTotalMemory(TextView totalMemr){
+        activityManager.getMemoryInfo(memory);
         totalMemory = memory.totalMem / 1048576L;
         String strTotal = Long.toString(totalMemory);
-
         totalMemr.setText("Total Memory: " + strTotal);
-        return 0;
     }
 
     public void updateAvailableMemory(TextView availMemr, TextView usedMemr){
